@@ -1,0 +1,51 @@
+module.exports = {
+  env: 'development',
+
+  database: {
+    /**
+     * Connection URL for Mongoose
+     * See https://mongoosejs.com/docs/index.html
+     */
+    connection:
+      'mongodb://syadmin:V3BX6XhWRyXm1vNL@cluster0-shard-00-00-moogy.gcp.mongodb.net:27017,cluster0-shard-00-01-moogy.gcp.mongodb.net:27017,cluster0-shard-00-02-moogy.gcp.mongodb.net:27017/development?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority',
+    transactions: true,
+    /**  connection: 'mongodb://localhost:27017/development',
+    transactions: false,
+    */
+
+    /**
+     * In case you want to use ACID transactions, follow this doc:
+     * https://mongoosejs.com/docs/transactions.html
+     */
+    // connection:
+    //   'mongodb://localhost:27017,localhost:27018,localhost:27019/development?replicaSet=rs',
+    // transactions: true,
+  },
+
+  /**
+   * Configuration to allow email sending used on:
+   * backend/src/services/shared/email/emailSender.js
+   *
+   * More info: https://nodemailer.com
+   */
+  email: {
+    from: '<insert your email here>',
+    host: null,
+    auth: {
+      user: null,
+      pass: null,
+    },
+  },
+
+  /**
+   * Client URL used when sending emails.
+   */
+  clientUrl:
+    'https://<insert project id here>.firebaseapp.com',
+
+  /**
+   * When this email is set, all requests will automatically authenticate using this email.
+   * Useful for testing purposes.
+   */
+  userAutoAuthenticatedEmailForTests: null,
+};

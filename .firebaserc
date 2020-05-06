@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "development": "famanagement09",
+    "production": "famanagement09"
+  }
+}
